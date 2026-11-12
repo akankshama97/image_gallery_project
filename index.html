@@ -3,34 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Image Gallery</title>
+    <title>Photo Gallery</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="header">
-        <h1>Photo Gallery Project</h1>
-        <p>Created for CodeAlpha Internship</p>
-    </div>
+    <!-- Header Section -->
+    <header class="gallery-header">
+        <div class="container">
+            <span class="badge"><span class="badge-dot"></span>Gallery Project</span>
+            <h1>Photo <span class="header-accent">Gallery</span></h1>
+            <p>A clean, responsive image gallery with <span class="text-highlight">category filters</span>, <span class="text-highlight">smooth lightbox preview</span>, and <span class="text-highlight">keyboard navigation</span>.</p>
+        </div>
+    </header>
 
-    <div class="gallery-warpper">
-        <div class="gallery-item"><img src="https://picsum.photos/500/350?random=1" alt="Pic 1" onclick="showPopup(0)"></div>
-        <div class="gallery-item"><img src="https://picsum.photos/500/350?random=2" alt="Pic 2" onclick="showPopup(1)"></div>
-        <div class="gallery-item"><img src="https://picsum.photos/500/350?random=3" alt="Pic 3" onclick="showPopup(2)"></div>
-        <div class="gallery-item"><img src="https://picsum.photos/500/350?random=4" alt="Pic 4" onclick="showPopup(3)"></div>
-        <div class="gallery-item"><img src="https://picsum.photos/500/350?random=5" alt="Pic 5" onclick="showPopup(4)"></div>
-        <div class="gallery-item"><img src="https://picsum.photos/500/350?random=6" alt="Pic 6" onclick="showPopup(5)"></div>
-    </div>
+    <main class="container">
+        <!-- Category Filter Buttons -->
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All Photos</button>
+            <button class="filter-btn" data-filter="nature">Nature</button>
+            <button class="filter-btn" data-filter="architecture">Architecture</button>
+            <button class="filter-btn" data-filter="travel">Travel</button>
+        </div>
 
-    <div id="image-viewer" class="popup" style="display:none;">
-        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <!-- Gallery Grid -->
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Item 1 -->
+            <div class="gallery-item" data-category="nature" data-title="Misty Mountain Sunrise">
+                <div class="image-box">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80" alt="Misty Mountain Sunrise" loading="lazy">
+                    <div class="overlay-hint">Click to expand</div>
+                </div>
+                <div class="item-info">
+                    <h3>Misty Mountain Sunrise</h3>
+                    <span class="category-tag">Nature</span>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="gallery-item" data-category="architecture" data-title="Modern Skyscraper">
+                <div class="image-box">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&auto=format&fit=crop&q=80" alt="Modern Skyscraper" loading="lazy">
+                    <div class="overlay-hint">Click to expand</div>
+                </div>
+                <div class="item-info">
+                    <h3>Modern Skyscraper</h3>
+                    <span class="category-tag">Architecture</span>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="gallery-item" data-category="nature" data-title="Deep Pine Forest">
+                <div class="image-box">
+                    <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&auto=format&fit=crop&q=80" alt="Deep Pine Forest" loading="lazy">
+                    <div class="overlay-hint">Click to expand</div>
+                </div>
+                <div class="item-info">
+                    <h3>Deep Pine Forest</h3>
+                    <span class="category-tag">Nature</span>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="gallery-item" data-category="travel" data-title="Open Road Journey">
+                <div class="image-box">
+                    <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&auto=format&fit=crop&q=80" alt="Open Road Journey" loading="lazy">
+                    <div class="overlay-hint">Click to expand</div>
+                </div>
+                <div class="item-info">
+                    <h3>Open Road Journey</h3>
+                    <span class="category-tag">Travel</span>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="gallery-item" data-category="architecture" data-title="Historic European Street">
+                <div class="image-box">
+                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&auto=format&fit=crop&q=80" alt="Historic European Street" loading="lazy">
+                    <div class="overlay-hint">Click to expand</div>
+                </div>
+                <div class="item-info">
+                    <h3>Historic European Street</h3>
+                    <span class="category-tag">Architecture</span>
+                </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="gallery-item" data-category="nature" data-title="Tropical Sunset Beach">
+                <div class="image-box">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80" alt="Tropical Sunset Beach" loading="lazy">
+                    <div class="overlay-hint">Click to expand</div>
+                </div>
+                <div class="item-info">
+                    <h3>Tropical Sunset Beach</h3>
+                    <span class="category-tag">Nature</span>
+                </div>
+            </div>
+
+            <!-- Item 7 -->
+            <div class="gallery-item" data-category="travel" data-title="Desert Sand Dunes">
+                <div class="image-box">
+                    <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=800&auto=format&fit=crop&q=80" alt="Desert Sand Dunes" loading="lazy">
+                    <div class="overlay-hint">Click to expand</div>
+                </div>
+                <div class="item-info">
+                    <h3>Desert Sand Dunes</h3>
+                    <span class="category-tag">Travel</span>
+                </div>
+            </div>
+
+            <!-- Item 8 -->
+            <div class="gallery-item" data-category="architecture" data-title="Night Skyline Lights">
+                <div class="image-box">
+                    <img src="https://images.unsplash.com/photo-1477959858617-67f30bc75b82?w=800&auto=format&fit=crop&q=80" alt="Night Skyline Lights" loading="lazy">
+                    <div class="overlay-hint">Click to expand</div>
+                </div>
+                <div class="item-info">
+                    <h3>Night Skyline Lights</h3>
+                    <span class="category-tag">Architecture</span>
+                </div>
+            </div>
+
+            <!-- Item 9 -->
+            <div class="gallery-item" data-category="travel" data-title="Alpine Night Sky">
+                <div class="image-box">
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&auto=format&fit=crop&q=80" alt="Alpine Night Sky" loading="lazy">
+                    <div class="overlay-hint">Click to expand</div>
+                </div>
+                <div class="item-info">
+                    <h3>Alpine Night Sky</h3>
+                    <span class="category-tag">Travel</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="imageViewer" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+        <button class="lightbox-close" id="closeBtn" aria-label="Close image">&times;</button>
         
-        <div class="popup-box">
-            <button class="arrow left-arrow" onclick="goPrev()">&lt;</button>
-            <img id="popup-img" src="" alt="Large View">
-            <button class="arrow right-arrow" onclick="goNext()">&gt;</button>
+        <div class="lightbox-content">
+            <button class="nav-btn prev-btn" id="prevBtn" aria-label="Previous image">&#10094;</button>
+            
+            <div class="lightbox-media-wrapper">
+                <img id="lightboxImg" src="" alt="Enlarged view">
+                <div class="lightbox-caption-bar">
+                    <span id="lightboxTitle" class="lightbox-title"></span>
+                    <span id="lightboxCounter" class="lightbox-counter"></span>
+                </div>
+            </div>
+            
+            <button class="nav-btn next-btn" id="nextBtn" aria-label="Next image">&#10095;</button>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="gallery-footer">
+        <p>&copy; 2026 Photo Gallery &bull; Built with HTML, CSS &amp; JavaScript</p>
+    </footer>
 
     <script src="index.js"></script>
 </body>
